@@ -28,11 +28,6 @@ const ArticlePage = () => {
             <Article articles={articles} userData={userData} />
         </div>
     );
-    // const deleteme = (id) => {
-    //     api.delete(`articles/${id}`)
-    //         .then((promise) => console.log(promise.data))
-    //         .catch((err) => console.log(err));
-    // };
 };
 const Wrapper = styled.div`
     h2 {
@@ -58,7 +53,6 @@ const Wrapper = styled.div`
         max-width: 100px;
     }
     .box {
-        /* border: 1px solid rgb(85, 26, 139); */
         border-bottom: 1px solid rgb(85, 26, 139);
         margin: 1rem;
         text-align: start;

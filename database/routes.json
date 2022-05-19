@@ -1,0 +1,5 @@
+{
+  "/api/*": "/$1",
+  "/articles/:id": "/articles/:id",
+  "/articles1/": "/articles?_embed=comments"
+}

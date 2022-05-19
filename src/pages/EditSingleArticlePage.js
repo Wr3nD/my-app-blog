@@ -3,18 +3,18 @@ import styled from "styled-components";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { api, apiGetArticle } from "../action";
 import { Field, Form } from "react-final-form";
 
 const EditSingleArticlePage = () => {
-    const [value, setValue] = useState("");
     const [value2, setValue2] = useState("");
-    const [value3, setValue3] = useState("");
+
     const [loading, setLoading] = useState(true);
 
     const { isAdmin } = useSelector((state) => state.admin);
     const { id } = useParams();
+    const navigate = useNavigate();
     const modules = {
         toolbar: [
             [{ font: [] }],
@@ -35,10 +35,7 @@ const EditSingleArticlePage = () => {
             .catch((error) => {
                 console.log(error);
             });
-        // const json = JSON.stringify(data);
-        // console.log("json", json);
-        // setDataLock((prevState) => [...prevState, json]);
-        // console.log("state", dataLock);
+        navigate("/articles");
     };
     const required = (value) => (value ? undefined : "Required");
     useEffect(() => {
@@ -51,6 +48,12 @@ const EditSingleArticlePage = () => {
             (err) => console.log(err)
         );
     }, []);
+    const DeleteArticle = () => {
+        api.delete(`articles/${id}`)
+            .then((promise) => console.log(promise.data))
+            .catch((err) => console.log(err));
+        navigate("/articles");
+    };
     if (loading) {
         <h1>Loading...</h1>;
     }
@@ -61,6 +64,9 @@ const EditSingleArticlePage = () => {
         };
         return (
             <Wrapper>
+                <Link to="/articles" className="btn">
+                    go back to articles
+                </Link>
                 <h1>editace článku</h1>
                 <div>
                     <h4>header</h4>
@@ -73,13 +79,7 @@ const EditSingleArticlePage = () => {
                                 <Field name="header">
                                     {({ input, meta }) => (
                                         <div className="box">
-                                            <input
-                                                type="text"
-                                                {...input}
-                                                // onChange={(e) =>
-                                                //     setValue2(e.target.value)
-                                                // }
-                                            />
+                                            <input type="text" {...input} />
                                             {meta.touched && meta.error && (
                                                 <span>{meta.error}</span>
                                             )}
@@ -107,6 +107,9 @@ const EditSingleArticlePage = () => {
                             </form>
                         )}
                     />
+                    <button className="btn" onClick={() => DeleteArticle()}>
+                        delete article
+                    </button>
                 </div>
             </Wrapper>
         );

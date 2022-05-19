@@ -3,8 +3,6 @@ import { Form, Field } from "react-final-form";
 import styled from "styled-components";
 import axios from "axios";
 import Alert from "../components/Alert";
-import { useDispatch } from "react-redux";
-import { LOGIN } from "../actions";
 
 import Spinner from "../components/Spinner";
 import { api } from "../action";

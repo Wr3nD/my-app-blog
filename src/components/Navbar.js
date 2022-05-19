@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/enigoo.png";
 import styled from "styled-components";
 import LoginButton from "./LoginButton";
+import Bell from "./Bell";
 
 const Navbar = () => {
     return (
@@ -18,6 +19,7 @@ const Navbar = () => {
                         <Link to="/articles">Articles</Link>
                     </li>
                     <LoginButton />
+                    <Bell />
                 </ul>
             </div>
         </NavContainer>

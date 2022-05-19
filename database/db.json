@@ -1,0 +1,357 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "isAdmin": true
+    },
+    {
+      "id": 2,
+      "username": "Karel",
+      "password": "admin",
+      "isAdmin": false
+    },
+    {
+      "id": 3,
+      "username": "Kamil",
+      "password": "admin",
+      "isAdmin": false
+    },
+    {
+      "username": "Wr3nD222",
+      "password": "123",
+      "confirm": "123",
+      "isAdmin": false,
+      "id": 5
+    },
+    {
+      "username": "Wr3nDik",
+      "password": "1234",
+      "confirm": "1234",
+      "isAdmin": false,
+      "id": 6
+    },
+    {
+      "username": "Crush420",
+      "password": "12345",
+      "confirm": "12345",
+      "isAdmin": false,
+      "id": 7
+    },
+    {
+      "username": "Crusher",
+      "password": "12345",
+      "confirm": "12345",
+      "isAdmin": false,
+      "id": 4
+    },
+    {
+      "username": "Wr3nD",
+      "password": "asdasd",
+      "confirm": "asdasd",
+      "isAdmin": false,
+      "id": 8
+    },
+    {
+      "username": "Kamilko",
+      "password": "123",
+      "confirm": "123",
+      "isAdmin": false,
+      "id": 9
+    },
+    {
+      "username": "radosta@speedlo.cz",
+      "password": "12",
+      "confirm": "12",
+      "isAdmin": false,
+      "id": 10
+    },
+    {
+      "username": "lukášJeFrajer",
+      "password": "123",
+      "confirm": "123",
+      "isAdmin": false,
+      "id": 11
+    }
+  ],
+  "articles": [
+    {
+      "header": "React is releasing new version!",
+      "text": "Thats for real ! version 25 is on the way",
+      "date": "2022-06-06T09:35:44+02:00",
+      "id": "1"
+    },
+    {
+      "header": "React Master !",
+      "text": "<p>testqarsadasfasfasdasdasdasd asdaddddddd lorem20</p><p><br></p><p><br></p><p><br></p><p><br></p><p><span style=\"background-color: rgb(255, 153, 0);\">Highlight Ssssss</span></p><p><span style=\"background-color: rgb(255, 153, 0);\">Adafasf</span></p>",
+      "id": "2"
+    },
+    {
+      "header": "Clanek 3",
+      "text": "First article",
+      "date": "2022-07-06T09:35:44+02:00",
+      "id": "3"
+    },
+    {
+      "header": "Clanek 4",
+      "text": "<p>testasdasdasdasdaasdasdasdasd</p>",
+      "id": "4"
+    },
+    {
+      "header": "Clanek 5",
+      "text": "<h2>First articlesadasdasdasd</h2><p><br></p><p><strong class=\"ql-font-serif\">asdojapsfhioph﻿</strong></p><p><span class=\"ql-font-serif\">¨</span></p><p><br></p><p><br></p><ul><li><span class=\"ql-font-serif\">asdasdasd</span></li><li><span class=\"ql-font-serif\">asdasd</span></li><li><br></li><li><span class=\"ql-font-serif\">asdasd</span></li><li><br></li><li><span class=\"ql-font-serif\">﻿</span></li></ul>",
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "header": "Clanek 6",
+      "text": "<div>test</div>",
+      "date": "2022-02-06T09:35:44+02:00"
+    },
+    {
+      "header": "Clanek 3",
+      "text": "<div>First article</div>",
+      "date": "2022-07-06T09:35:44+02:00",
+      "id": "7"
+    },
+    {
+      "header": "nový článek je tu to je super",
+      "text": "<h1>tak to je velká paráda</h1><p>co ??takcobude. nechapu</p>",
+      "id": "1652361941137"
+    },
+    {
+      "header": "asdasdasd",
+      "text": "<p><span style=\"background-color: rgb(230, 0, 0);\">asdasdasdasdasdasasasdasodihoafiahfoasao.asfasofhaosfihoahaa taktojena piču.asdads ssdsdsds</span>﻿</p>",
+      "id": "1652362133043"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "articleId": "1",
+      "userId": 1,
+      "text": "Are you serious ? iam so hyped about that lol",
+      "date": "2022-05-06T09:35:44+02:00"
+    },
+    {
+      "id": 2,
+      "articleId": "1",
+      "userId": 3,
+      "text": "not gonna lie this is a game breaker",
+      "date": "2022-05-06T09:35:44+02:00"
+    },
+    {
+      "id": 3,
+      "articleId": "1",
+      "userId": 5,
+      "text": "Finally!!!",
+      "date": "2022-05-06T09:35:44+02:00"
+    },
+    {
+      "id": 4,
+      "articleId": "3",
+      "userId": 4,
+      "text": "next Comment",
+      "date": "2022-05-06T09:35:44+02:00"
+    },
+    {
+      "id": 5,
+      "articleId": "2",
+      "userId": 1,
+      "text": "for sure not first  comment",
+      "date": "2022-05-06T09:35:44+02:00"
+    },
+    {
+      "id": 6,
+      "articleId": "4",
+      "userId": 4,
+      "text": "next Comment",
+      "date": "2022-05-06T09:35:44+02:00"
+    },
+    {
+      "id": 7,
+      "articleId": "3",
+      "userId": 5,
+      "text": "for sure not first  comment",
+      "date": "2022-05-06T09:35:44+02:00"
+    },
+    {
+      "id": 8,
+      "articleId": "2",
+      "userId": 4,
+      "text": "next Comment",
+      "date": "2022-05-06T09:35:44+02:00"
+    },
+    {
+      "id": 9,
+      "articleId": "2",
+      "userId": 5,
+      "text": "for sure not first  comment",
+      "date": "2022-05-06T09:35:44+02:00"
+    },
+    {
+      "text": "no tak doufám že už to všechno funguje správně",
+      "userId": 5,
+      "date": 1652269289259,
+      "articleId": "2",
+      "id": 10
+    },
+    {
+      "text": "no problemo",
+      "userId": 1,
+      "date": 1652269978406,
+      "articleId": "5",
+      "id": 13
+    },
+    {
+      "text": "asdasdasd",
+      "userId": 1,
+      "date": 1652351653591,
+      "articleId": "5",
+      "id": 14
+    },
+    {
+      "text": "adadad",
+      "userId": 1,
+      "date": 1652352284956,
+      "articleId": "5",
+      "id": 16
+    },
+    {
+      "text": "adasdasd",
+      "userId": 1,
+      "date": 1652434935507,
+      "articleId": "1652361941137",
+      "id": 18
+    },
+    {
+      "text": "<p><span style=\"background-color: rgb(204, 102, 153);\">@admin</span>﻿</p>",
+      "userId": 1,
+      "date": 1652872877335,
+      "articleId": "2",
+      "id": 20
+    },
+    {
+      "text": "<p><span style=\"background-color: rgb(204, 102, 153);\">@admin</span>﻿</p>",
+      "userId": 1,
+      "date": 1652872885934,
+      "articleId": "3",
+      "id": 21
+    },
+    {
+      "text": "<p><span style=\"background-color: rgb(204, 102, 153);\">@admin</span>﻿</p>",
+      "userId": 1,
+      "date": 1652872934585,
+      "articleId": "6",
+      "id": 22
+    },
+    {
+      "text": "<p><span style=\"background-color: rgb(204, 102, 153);\">@admin</span>﻿</p>",
+      "userId": 1,
+      "date": 1652874118672,
+      "articleId": "6",
+      "id": 23
+    },
+    {
+      "text": "<p><span style=\"background-color: rgb(204, 102, 153);\">@admin</span>﻿</p>",
+      "userId": 1,
+      "date": 1652877289914,
+      "articleId": "1",
+      "id": 30
+    },
+    {
+      "text": "<p><span style=\"background-color: rgb(204, 102, 153);\">@admin</span>﻿</p>",
+      "userId": 1,
+      "date": 1652950122023,
+      "articleId": "2",
+      "id": 31
+    },
+    {
+      "text": "<p><span style=\"background-color: rgb(204, 102, 153);\">@admin</span>﻿</p> asidhaisdh ",
+      "userId": 1,
+      "date": 1652950132439,
+      "articleId": "2",
+      "id": 32
+    },
+    {
+      "text": "<p><span style=\"background-color: rgb(204, 102, 153);\">@admin</span>﻿</p> asdoashd <p><span style=\"background-color: rgb(204, 102, 153);\">@Crusher</span>﻿</p>",
+      "userId": 1,
+      "date": 1652950148174,
+      "articleId": "2",
+      "id": 33
+    }
+  ],
+  "notifications": [
+    {
+      "userId": 1,
+      "visited": true,
+      "articleId": "2",
+      "commentsId": 20,
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "visited": true,
+      "articleId": "3",
+      "commentsId": 21,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "visited": true,
+      "articleId": "6",
+      "commentsId": 22,
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "visited": true,
+      "articleId": "6",
+      "commentsId": 23,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "visited": true,
+      "articleId": "1",
+      "commentsId": 30,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "visited": true,
+      "articleId": "2",
+      "commentsId": 31,
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "visited": true,
+      "articleId": "2",
+      "commentsId": 31,
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "visited": false,
+      "articleId": "2",
+      "commentsId": 32,
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "visited": true,
+      "articleId": "2",
+      "commentsId": 33,
+      "id": 14
+    },
+    {
+      "userId": 4,
+      "visited": false,
+      "articleId": "2",
+      "commentsId": 33,
+      "id": 15
+    }
+  ]
+}

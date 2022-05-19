@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Form, Field } from "react-final-form";
 import styled from "styled-components";
-import axios from "axios";
+
 import Alert from "../components/Alert";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { apiGetUser, user } from "../action";
 import { LOGIN } from "../actions";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const required = (value) => (value ? undefined : "Required");
 const LoginPage = () => {
@@ -15,9 +15,9 @@ const LoginPage = () => {
         msg: "",
         type: "",
     });
-
+    const { isAdmin } = useSelector((state) => state.admin);
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
     const showAlert = (show = false, type = "", msg = "") => {
         setAlert({ show, type, msg });
     };
@@ -38,6 +38,7 @@ const LoginPage = () => {
                         },
                     });
                     showAlert(true, "success", "Úspěšně přihlášen");
+                    navigate("/articles");
                 } else {
                     showAlert(true, "danger", "špatné přihlašovací udaje");
                 }
@@ -47,83 +48,96 @@ const LoginPage = () => {
             }
         );
     };
+    if (!isAdmin) {
+        return (
+            <Login>
+                <Form
+                    onSubmit={onSubmit}
+                    render={({
+                        handleSubmit,
+                        form,
+                        submitting,
+                        pristine,
+                        values,
+                    }) => (
+                        <form
+                            onSubmit={async (event) => {
+                                await handleSubmit(event);
+                                form.restart();
+                            }}
+                        >
+                            {alert.show && (
+                                <Alert {...alert} removeAlert={showAlert} />
+                            )}
+                            <h2>Login</h2>
+                            <Field name="username" validate={required}>
+                                {({ input, meta }) => (
+                                    <div>
+                                        <label>Username</label>
+                                        <input
+                                            {...input}
+                                            type="text"
+                                            placeholder="Username"
+                                        />
+                                        {meta.error && meta.touched && (
+                                            <span>{meta.error}</span>
+                                        )}
+                                    </div>
+                                )}
+                            </Field>
+                            <Field name="password" validate={required}>
+                                {({ input, meta }) => (
+                                    <div>
+                                        <label>Password</label>
+                                        <input
+                                            {...input}
+                                            type="password"
+                                            placeholder="Password"
+                                        />
+                                        {meta.error && meta.touched && (
+                                            <span>{meta.error}</span>
+                                        )}
+                                    </div>
+                                )}
+                            </Field>
 
+                            <div className="buttons">
+                                <button
+                                    type="submit"
+                                    disabled={submitting}
+                                    className="btn"
+                                >
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    )}
+                />
+                <Link to="/register">
+                    <h4 className="register">
+                        dont you have an account ? create one
+                    </h4>
+                </Link>
+            </Login>
+        );
+    }
     return (
         <Login>
-            <Form
-                onSubmit={onSubmit}
-                render={({
-                    handleSubmit,
-                    form,
-                    submitting,
-                    pristine,
-                    values,
-                }) => (
-                    <form
-                        onSubmit={async (event) => {
-                            await handleSubmit(event);
-                            form.restart();
-                        }}
-                    >
-                        {alert.show && (
-                            <Alert {...alert} removeAlert={showAlert} />
-                        )}
-                        <h2>Login</h2>
-                        <Field name="username" validate={required}>
-                            {({ input, meta }) => (
-                                <div>
-                                    <label>Username</label>
-                                    <input
-                                        {...input}
-                                        type="text"
-                                        placeholder="Username"
-                                    />
-                                    {meta.error && meta.touched && (
-                                        <span>{meta.error}</span>
-                                    )}
-                                </div>
-                            )}
-                        </Field>
-                        <Field name="password" validate={required}>
-                            {({ input, meta }) => (
-                                <div>
-                                    <label>Password</label>
-                                    <input
-                                        {...input}
-                                        type="password"
-                                        placeholder="Password"
-                                    />
-                                    {meta.error && meta.touched && (
-                                        <span>{meta.error}</span>
-                                    )}
-                                </div>
-                            )}
-                        </Field>
-
-                        <div className="buttons">
-                            <button
-                                type="submit"
-                                disabled={submitting}
-                                className="btn"
-                            >
-                                Submit
-                            </button>
-                        </div>
-                    </form>
-                )}
-            />
-            <Link to="/register">
-                <h4 className="register">
-                    dont you have an account ? create one
-                </h4>
-            </Link>
+            {" "}
+            <h3>
+                you are already logged in, you can loggout or proceed to
+                articles
+            </h3>
         </Login>
     );
 };
 
 const Login = styled.div`
     font-family: sans-serif;
-
+    h3 {
+        text-align: center;
+        margin: 2rem;
+    }
     h1 {
         text-align: center;
         color: #222;

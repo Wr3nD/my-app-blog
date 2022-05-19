@@ -23,10 +23,13 @@ function App() {
                     <Route path="/articles" element={<Articles />} />
 
                     <Route path="/articles/:id" element={<SingleArticle />} />
+                    <Route
+                        path="/articles/:id?_embed=:id"
+                        element={<SingleArticle />}
+                    />
                     <Route path="/article/:id" element={<Edit />} />
                     <Route path="*" element={<Error />} />
                 </Routes>
-                <Footer />
             </Router>
         </>
     );

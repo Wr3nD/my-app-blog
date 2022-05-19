@@ -13,6 +13,43 @@ export const apiGetUser = (username, password, success, alert) => {
             alert(error.response);
         });
 };
+
+export const apiGetOneUser = (username, success, alert) => {
+    api.get("users", { params: { username } })
+        .then((response) => {
+            success(response.data);
+        })
+        .catch((error) => {
+            alert(error.response);
+        });
+};
+export const apiGetNotifications = (userId, success, alert) => {
+    api.get("notifications", { params: { userId } })
+        .then((response) => {
+            success(response.data);
+        })
+        .catch((error) => {
+            alert(error.response);
+        });
+};
+export const apiGetAllUsers = (text, success, alert) => {
+    api.get(`users?q=${text}`)
+        .then((response) => {
+            success(response.data);
+        })
+        .catch((error) => {
+            alert(error.response);
+        });
+};
+export const apiGetAllUsers2 = (success, alert) => {
+    api.get(`users`)
+        .then((response) => {
+            success(response.data);
+        })
+        .catch((error) => {
+            alert(error.response);
+        });
+};
 export const apiGetUserByUsersId = (userId, success, alert) => {
     api.get("users")
         .then((response) => {
@@ -31,27 +68,12 @@ export const apiGetArticle = (id, success, alert) => {
             alert(error.response);
         });
 };
-// export const apiGetSingleArticleComments = (id, success, alert) =>
-//     api
-//         .get(`articles/${id}`)
-//         .then((resp) => {
-//             success(console.log(resp.data.comments));
-//         })
-//         .catch((error) => {
-//             alert(error.response);
-//         });
+
 export const apiGetAllArticles = (success, error) => {
     api.get("articles1")
         .then((promise) => success(promise.data))
         .catch((err) => error(err));
 };
-// export const apiGetAllUsers = (success, error) => {
-//     api.get("users")
-//         .then((promise) =>
-//             success(promise.data.map((data) => [data.username, data.id]))
-//         )
-//         .catch((err) => error(err));
-// };
 
 export const apiGetAllComments = (id, success, error) => {
     api.get(`/articles/${id}?_embed=comments`)
